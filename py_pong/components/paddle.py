@@ -1,5 +1,5 @@
 import pygame
-from py_pong.components.colors import BLACK
+from py_pong.components.constants import BLACK
 
 class Paddle(pygame.sprite.Sprite):
   def __init__(self, color, width, height):
@@ -12,10 +12,22 @@ class Paddle(pygame.sprite.Sprite):
     self.image.fill(BLACK)
     self.image.set_colorkey(BLACK)
  
-    # Draw the paddle (a rectangle!)
+    # Draw the paddle
     pygame.draw.rect(self.image, color, [0, 0, width, height])
         
     # Fetch the rectangle object that has the dimensions of the image.
     self.rect = self.image.get_rect()
+  
+  def get_x(self):
+    return self.rect.x
+  
+  def set_x(self, x: int):
+    self.rect.x = x
+  
+  def get_y(self):
+    return self.rect.y
+  
+  def set_y(self, y: int):
+    self.rect.y = y
 
 

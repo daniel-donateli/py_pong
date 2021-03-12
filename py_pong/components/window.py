@@ -1,10 +1,10 @@
 from pygame.draw import line
 import pygame.display as display
-from py_pong.components.colors import *
+from py_pong.components.constants import *
 
 class Window:
-  def __init__(self, width: int = 800, height: int = 600):
-    self.screen = display.set_mode((width, height))
+  def __init__(self):
+    self.screen = display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     display.set_caption("Pong!")
   
   def draw(self, sprite_groups):
